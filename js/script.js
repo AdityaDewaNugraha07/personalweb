@@ -1,16 +1,35 @@
-// Subscrbe YouTube Tamzidan Mahdiyin
-
 function hamburg() {
   const navbar = document.querySelector(".dropdown");
-  navbar.style.transform = "translateY(0px)";
+  navbar.style.transform = "translateX(0)"; // Geser ke posisi 0 (Muncul di layar)
 }
+
 function cancel() {
   const navbar = document.querySelector(".dropdown");
-  navbar.style.transform = "translateY(-500px)";
+  navbar.style.transform = "translateX(100%)"; // Geser 100% ke kanan (Ngumpet)
+}
+
+// =========================================
+// Fungsi Navigasi HP dengan Jeda Animasi
+// =========================================
+function navigateMenu(event, targetId) {
+  // 1. Mencegah browser langsung lompat ke section tujuan
+  event.preventDefault();
+
+  // 2. Beri jeda waktu (misal: 400 milidetik / 0.4 detik)
+  // Waktu ini pas untuk biarin efek neon-nya nyala dulu
+  setTimeout(() => {
+    // 3. Tutup menu sidebar-nya
+    cancel();
+
+    // 4. Gulung layar ke section yang dituju dengan mulus (smooth)
+    const targetSection = document.querySelector(targetId);
+    if (targetSection) {
+      targetSection.scrollIntoView({ behavior: "smooth" });
+    }
+  }, 600); // 🔥 Angka 400 ini bisa kamu ganti (misal 500 untuk 0.5 detik, 600 untuk 0.6 detik)
 }
 
 // Animasi Menulis
-
 const texts = ["BACKEND DEVELOPER", "LARAVEL LOVERS", "GOD OF WAR FANS"];
 
 let speed = 100;
