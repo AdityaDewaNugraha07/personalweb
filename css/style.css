@@ -1239,7 +1239,7 @@ nav {
 
   /* 🔥 JURUS NUDGE (GESER) FULL 1 KOTAK KE KIRI 🔥 */
   .contact-content {
-    transform: translateX(-10px); /* Angka minus buat geser ke kiri */
+    transform: translateX(-15px); /* Angka minus buat geser ke kiri */
   }
 
   .contact-info { 
