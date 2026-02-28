@@ -14,27 +14,34 @@
   <div class="custom-cursor"></div>
   <nav>
     <div class="nav-container">
-      <!-- <div class="logo" data-aos="zoom-in" data-aos-duration="1500"><span>{ </span>Aditya De<span>wa Nugraha }</span> -->
       <div class="logo" data-aos="zoom-in" data-aos-duration="1500"><span>
           < </span>Dewa<span>Dev./ ></span>
       </div>
       <div class="links">
-        <div class="link" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="100"><a href="#home">Home</a>
-        </div>
-        <div class="link" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="200"><a href="#about">About</a>
-        </div>
-        <div class="link" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="400"><a
-            href="#myjourney">Journey</a></div>
-        <div class="link" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="300"><a href="#skill">Skills</a>
-        </div>
-        <div class="link" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="500"><a
-            href="#contact">Contact</a></div>
+        <div class="link" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="100"><a href="#home">Home</a></div>
+        <div class="link" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="200"><a href="#about">About</a></div>
+        <div class="link" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="400"><a href="#myjourney">Journey</a></div>
+        <div class="link" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="300"><a href="#skill">Skills</a></div>
+        <div class="link" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="300"><a href="#projects">Projects</a></div>
+        <div class="link" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="500"><a href="#contact">Contact</a></div>
       </div>
     </div>
-    <i class="fa-solid fa-bars hamburg" onclick="hamburg()"></i>
-
-
+    
+    <i class="fa-solid fa-bars-staggered hamburg" onclick="hamburg()"></i>
   </nav>
+
+  <div class="dropdown">
+    <div class="links">
+      <a href="#home" onclick="cancel()">Home</a>
+      <a href="#about" onclick="cancel()">About</a>
+      <a href="#myjourney" onclick="cancel()">Journey</a>
+      <a href="#skill" onclick="cancel()">Skills</a>
+      <a href="#projects" onclick="cancel()">Projects</a>
+      <a href="#contact" onclick="cancel()">Contact</a>
+      
+      <i class="fa-solid fa-xmark cancel" onclick="cancel()"></i>
+    </div>
+  </div>
 
   <section id="home">
     <div class="main-container">
@@ -447,7 +454,7 @@
 
         <div class="projects-header" data-aos="fade-down" data-aos-duration="1500">
           <h1>My Projects</h1>
-          <p> A few of the project that i ever created, and i will update this section if i have new project to show.
+          <p> A few of the project that i created, and i will update this section if i have new project to show.
            <br> Feel free to check out the demo and source code of each project</p>
 
         </div>
@@ -616,4 +623,4 @@
   </script>
 </body>
 
-</html> 
+</html>
