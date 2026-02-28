@@ -12,10 +12,12 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 body {
   width: 100%;
+  max-width: 100%;
   min-height: 100vh;
   background-image: url("../img/background.jpg");
   background-size: cover;
