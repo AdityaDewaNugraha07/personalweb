@@ -131,29 +131,30 @@ nav {
 }
 
 .dropdown {
-  z-index: 100;
-  position: absolute;
+  z-index: 99999; /* 🔥 WAJIB: Biar pangkatnya lebih tinggi dari Navbar & gak ketutup */
+  position: fixed; /* 🔥 WAJIB: Biar menunya selalu tampil di layar walau lagi di-scroll */
   top: 0;
+  left: 0;
   transform: translateY(-500px);
   width: 100%;
   height: auto;
-  backdrop-filter: blur(4px) brightness(40%);
-  box-shadow: 0 0 20px black;
-  transition: 0.2s linear;
+  background: rgba(0, 0, 0, 0.9); /* Background dibikin gelap pekat transparan */
+  backdrop-filter: blur(15px); /* Efek kaca tebal */
+  box-shadow: 0 10px 30px rgba(58, 211, 3, 0.2); /* Ada bayangan hijau neon sedikit di bawahnya */
+  transition: 0.4s ease-in-out; /* Animasi turunnya dibikin lebih smooth dan elegan */
 }
 
-.dropdown .links a {
+.dropdown .links {
   display: flex;
-  color: white;
-  text-decoration: none;
-  padding: 15px 0;
-  justify-content: center;
-  align-items: center;
-  transition: 0.2s linear;
+  flex-direction: column;
+  padding-top: 70px; /* Jarak aman dari atas biar gak nabrak tombol Silang (X) */
+  padding-bottom: 30px;
 }
 
 .dropdown .links a:hover {
   background-color: rgb(58, 211, 3);
+  color: black;
+  font-weight: 700;
 }
 
 /* =========================================
@@ -1239,7 +1240,7 @@ nav {
 
   /* 🔥 JURUS NUDGE (GESER) FULL 1 KOTAK KE KIRI 🔥 */
   .contact-content {
-    transform: translateX(-15px); /* Angka minus buat geser ke kiri */
+    transform: translateX(-10px); /* Angka minus buat geser ke kiri */
   }
 
   .contact-info { 
