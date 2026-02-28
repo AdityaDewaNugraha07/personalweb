@@ -283,7 +283,8 @@ nav {
 
 .content p {
   font-size: clamp(0.9rem, 2vw, 1.1rem);
-  margin: 10px 0;
+  margin: 20px 0 30px 0; /* Memberi jarak atas 20px dan bawah 30px */
+  line-height: 1.6; /* Memberi jarak renggang antar baris teks biar gak kegencet */
   color: #ccc;
 }
 
@@ -655,11 +656,9 @@ nav {
   width: 90%;
   max-width: 1200px;
   padding: 3rem 0;
+
   background: rgba(0, 0, 0, 0.7);
-  backdrop-filter: blur(10px);
-  border-radius: 20px;
-  color: white;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  
   outline: none;
   box-shadow: none;
 }
@@ -832,27 +831,29 @@ nav {
 .soft-skills-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr); 
-  gap: 1rem;
+  gap: 1.5rem;
   height: 100%;
-  width: 90%;
-  max-width: 850px;
+  width: 100%;
+  max-width: 780px;
   margin: 0 auto;
+  justify-content: center;
 }
 
 .soft-skill-card {
   background: rgba(255, 255, 255, 0.02);
   border: 1px solid rgba(58, 211, 3, 0.2);
   border-radius: 15px;
-  padding: 2rem 1.5rem;
+  padding: 1.5rem 1rem;
   text-align: center;
   position: relative;
-  overflow: hidden;
   z-index: 1;
-  transition: all 0.4s ease; 
+  transition: all 0.4s ease;
   cursor: none;
-  height: 100%;
+
+  height: 150px; 
   width: 100%;
-  min-height: 200px; 
+  overflow: hidden; 
+
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -1202,7 +1203,7 @@ nav {
 @media (max-width: 1024px) {
   .about-grid, .contact-content { grid-template-columns: 1fr; gap: 2rem; }
   .skills-grid, .projects-grid { grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
-  .soft-skills-grid { grid-template-columns: repeat(2, 1fr); }
+  .soft-skills-grid { grid-template-columns: repeat(2, 1fr); gap: 1rem; }
   .timeline-grid { grid-template-columns: 1fr; gap: 3rem; }
   
   .skills-grid .skill-category:last-child:nth-child(odd) { grid-column: span 2; max-width: 600px; margin: 0 auto; width: 100%; }
@@ -1215,6 +1216,12 @@ nav {
   .hamburg, .cancel { display: block; }
 
   .about-content, .skills-content, .timeline-content-wrapper, .contact-content { width: 95%; padding: 2rem 1.5rem; }
+  .content .typewriter { margin-bottom: 1rem; /* Jarak aman dari tulisan Neon ke Paragraf */ }
+  .content p {
+    line-height: 1.8 !important; /* Napas ekstra panjang antar baris */
+    margin-bottom: 2rem !important; /* Jarak aman dari Paragraf ke Ikon Sosmed */
+    text-align: justify !important; /* Membatalkan efek 'justify' dari HTML biar teks lebih rileks di HP */
+    padding: 0 50px; /* Jarak aman biar teks kanan-kirinya gak nabrak pinggir layar HP */}
 
   .main-container { flex-direction: column-reverse; text-align: center; justify-content: center; gap: 2rem; }
   .main-container .content { width: 100%; display: flex; flex-direction: column; align-items: center; }
@@ -1223,10 +1230,46 @@ nav {
   .content button { width: 80%; }
 
   .skills-grid, .projects-grid, .soft-skills-grid { grid-template-columns: 1fr; }
+  .soft-skills-grid { grid-template-columns: repeat(2, 1fr); gap: 1rem; }
   .skills-grid .skill-category:last-child:nth-child(odd) { grid-column: span 1; }
 
-  .contact-info { padding-right: 0; text-align: center; }
-  .contact-item { justify-content: center; }
+  /* ================================ */
+  /* PERBAIKAN CONTACT SECTION DI HP  */
+  /* ================================ */
+
+  /* 🔥 JURUS NUDGE (GESER) FULL 1 KOTAK KE KIRI 🔥 */
+  .contact-content {
+    transform: translateX(-10px); /* Angka minus buat geser ke kiri */
+  }
+
+  .contact-info { 
+    padding-right: 0; 
+    text-align: center; 
+  }
+  
+  /* 1. Bikin wadah kontaknya sejajar lurus ke bawah tapi posisinya di tengah layar */
+  .contact-details {
+    display: inline-block;
+    text-align: left; /* Teks dan ikon tetap rata kiri */
+    margin: 0 auto; /* Mendorong wadah ke tengah */
+  }
+
+  .contact-item { 
+    justify-content: flex-start; /* Membatalkan rata tengah agar ikon sejajar tegak lurus */
+  }
+
+  /* 2. Merapikan formasi tombol Sosial Media */
+  .contact-info .social-links {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px; /* Jarak antar tombol sosmed */
+    margin-top: 1.5rem;
+  }
+
+  .contact-info .social-links i {
+    margin: 0; /* Reset margin bawaan biar jaraknya konsisten */
+  }
 }
 
 /* MATIKAN KURSOR NEON DI LAYAR SENTUH */
