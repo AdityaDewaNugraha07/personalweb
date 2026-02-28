@@ -100,15 +100,33 @@ nav {
   text-shadow: 0 0 10px rgb(58, 211, 3);
 }
 
-.hamburg,
-.cancel {
+.hamburg {
   cursor: pointer;
   position: absolute;
-  right: 15px;
-  top: 10px;
-  color: white;
+  right: 20px;
+  top: 15px; /* Posisinya disesuaikan biar sejajar dengan tulisan DewaDev */
   display: none;
-  font-size: clamp(2.5rem, 0.5rem + 5vw, 3rem);
+
+  /* 🔥 1. UKURAN DIKECILKAN */
+  font-size: 1.4rem; 
+
+  /* 🔥 2. WARNA DAN HIASAN TEMA NEON */
+  color: rgb(58, 211, 3); /* Ikon warna hijau neon */
+
+  
+  border-radius: 8px; /* Ujungnya agak melengkung modern */
+  backdrop-filter: blur(5px);
+  
+  
+  transition: all 0.3s ease;
+}
+
+/* 🔥 3. EFEK MENYALA SAAT DISENTUH/DIKLIK */
+.hamburg:hover {
+  background: rgba(58, 211, 3, 0.15);
+  border-color: rgb(58, 211, 3);
+  box-shadow: 0 0 20px rgba(58, 211, 3, 0.6);
+  transform: scale(1.1); /* Membesar sedikit */
 }
 
 .nav-container .links {
@@ -131,31 +149,71 @@ nav {
 }
 
 .dropdown {
-  z-index: 99999; /* 🔥 WAJIB: Biar pangkatnya lebih tinggi dari Navbar & gak ketutup */
-  position: fixed; /* 🔥 WAJIB: Biar menunya selalu tampil di layar walau lagi di-scroll */
+  z-index: 99999;
+  position: fixed;
   top: 0;
-  left: 0;
-  transform: translateY(-500px);
-  width: 100%;
-  height: auto;
-  background: rgba(0, 0, 0, 0.9); /* Background dibikin gelap pekat transparan */
-  backdrop-filter: blur(15px); /* Efek kaca tebal */
-  box-shadow: 0 10px 30px rgba(58, 211, 3, 0.2); /* Ada bayangan hijau neon sedikit di bawahnya */
-  transition: 0.4s ease-in-out; /* Animasi turunnya dibikin lebih smooth dan elegan */
+  right: 0;
+  left: auto;
+  transform: translateX(100%);
+  
+  /* 🔥 1. UKURAN DIET (Lebih Ramping) 🔥 */
+  width: 200px; /* Lebar dikecilkan agar sisa layar di kiri tetap kelihatan */
+  height: 100vh;
+  
+  /* 🔥 2. HIASAN BACKGROUND CYBERPUNK 🔥 */
+  background: linear-gradient(145deg, rgba(10, 10, 10, 0.95), rgba(15, 35, 15, 0.9)); /* Gradien gelap dengan sedikit aura hijau di bawah */
+  backdrop-filter: blur(15px);
+  border-left: 2px solid rgb(58, 211, 3);
+  
+  /* Tambahan bayangan luar dan dalam (inset) biar ada efek kaca 3D */
+  box-shadow: -10px 0 30px rgba(58, 211, 3, 0.15), 
+              inset 5px 0 15px rgba(58, 211, 3, 0.05); 
+              
+  transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
 .dropdown .links {
   display: flex;
   flex-direction: column;
-  padding-top: 70px; /* Jarak aman dari atas biar gak nabrak tombol Silang (X) */
-  padding-bottom: 30px;
+  padding-top: 80px; /* Jarak aman dari tombol silang */
+}
+
+.dropdown .links a {
+  display: block;
+  color: #ccc !important; /* Warna abu-abu terang biar elegan */
+  text-decoration: none;
+  padding: 15px 25px; /* Bantalannya disesuaikan dengan lebar baru */
+  font-size: 1.1rem; /* Ukuran font agak dikecilkan sedikit */
+  font-weight: 500;
+  text-align: left;
+  border-bottom: 1px solid rgba(58, 211, 3, 0.1); /* Garis pembatas bawah warna hijau sangat tipis */
+  transition: all 0.3s ease;
 }
 
 .dropdown .links a:hover {
-  background-color: rgb(58, 211, 3);
-  color: black;
-  font-weight: 700;
+  color: rgb(58, 211, 3) !important;
+  background-color: rgba(58, 211, 3, 0.08); /* Latar belakang hijau transparan */
+  padding-left: 35px; /* Efek teks maju ke kanan */
+  text-shadow: 0 0 10px rgb(58, 211, 3); /* Teks glowing */
+  border-left: 4px solid rgb(58, 211, 3); /* Muncul balok hijau nyala di kiri teks */
 }
+
+.cancel {
+  position: absolute;
+  top: 20px;
+  right: 25px;
+  font-size: 2rem;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s ease;
+  z-index: 100000;
+}
+
+.cancel:hover {
+  color: rgb(58, 211, 3);
+  transform: rotate(90deg) scale(1.1); /* Muter dan membesar sedikit */
+  text-shadow: 0 0 15px rgb(58, 211, 3);
+} 
 
 /* =========================================
    4. HOME SECTION
@@ -323,6 +381,7 @@ nav {
   font-weight: 700;
   border-radius: 5px;
   transition: 0.2s linear;
+  transform: translateX(-5px); /* Angka minus (-) untuk geser ke kiri */
 }
 
 .content button:hover {
@@ -1228,7 +1287,7 @@ nav {
   .main-container .content { width: 100%; display: flex; flex-direction: column; align-items: center; }
   .header-group { justify-content: center; }
   .main-container .image { width: 250px; height: 250px; margin-bottom: 2rem; }
-  .content button { width: 80%; }
+  .content button { transform: translateX(-30px); width: 100%; }
 
   .skills-grid, .projects-grid, .soft-skills-grid { grid-template-columns: 1fr; }
   .soft-skills-grid { grid-template-columns: repeat(2, 1fr); gap: 1rem; }
@@ -1237,11 +1296,6 @@ nav {
   /* ================================ */
   /* PERBAIKAN CONTACT SECTION DI HP  */
   /* ================================ */
-
-  /* 🔥 JURUS NUDGE (GESER) FULL 1 KOTAK KE KIRI 🔥 */
-  .contact-content {
-    transform: translateX(-10px); /* Angka minus buat geser ke kiri */
-  }
 
   .contact-info { 
     padding-right: 0; 
