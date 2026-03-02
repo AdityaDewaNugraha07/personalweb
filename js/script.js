@@ -83,3 +83,36 @@ clickables.forEach((el) => {
     cursor.classList.remove("hover-effect");
   });
 });
+
+// =========================================
+// AUDIO CONTROLLER (DUAL BUTTON SYSTEM)
+// =========================================
+const audio = document.getElementById("bg-music");
+const audioBtnPC = document.getElementById("audio-control-pc");
+const audioBtnMobile = document.getElementById("audio-control-mobile");
+const iconPC = audioBtnPC.querySelector("i");
+const iconMobile = audioBtnMobile.querySelector("i");
+
+audio.volume = 0.3; // Volume suara
+
+function toggleAudio() {
+  if (audio.paused) {
+    audio.play();
+    // Nyalakan efek dan ganti ikon di KEDUA tombol
+    audioBtnPC.classList.add("playing");
+    audioBtnMobile.classList.add("playing");
+    iconPC.className = "fa-solid fa-volume-high";
+    iconMobile.className = "fa-solid fa-volume-high";
+  } else {
+    audio.pause();
+    // Matikan efek dan ganti ikon di KEDUA tombol
+    audioBtnPC.classList.remove("playing");
+    audioBtnMobile.classList.remove("playing");
+    iconPC.className = "fa-solid fa-music";
+    iconMobile.className = "fa-solid fa-music";
+  }
+}
+
+// Hubungkan fungsi ke masing-masing tombol
+audioBtnPC.addEventListener("click", toggleAudio);
+audioBtnMobile.addEventListener("click", toggleAudio);
