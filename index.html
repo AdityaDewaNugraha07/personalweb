@@ -26,6 +26,10 @@
         <div class="link" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="500"><a href="#contact">Contact</a></div>
       </div>
     </div>
+
+    <button id="audio-control-mobile" class="audio-btn-mobile">
+      <i class="fa-solid fa-music"></i>
+    </button>
     
     <i class="fa-solid fa-bars-staggered hamburg" onclick="hamburg()"></i>
 
@@ -630,6 +634,14 @@
       </p>
     </div>
   </footer>
+
+ <audio id="bg-music" loop>
+    <source src="audio/Bgm.mp3" type="audio/mpeg">
+  </audio>
+
+  <button id="audio-control-pc" class="audio-btn-pc">
+    <i class="fa-solid fa-music"></i>
+  </button>
 
   <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
   <script src="./js/script.js"></script>
