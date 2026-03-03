@@ -167,10 +167,7 @@ nav {
 
   /* 🔥 2. WARNA DAN HIASAN TEMA NEON */
   color: rgb(58, 211, 3); /* Ikon warna hijau neon */
-
   border-radius: 8px; /* Ujungnya agak melengkung modern */
-  backdrop-filter: blur(5px);
-
   transition: all 0.3s ease;
 }
 
@@ -219,7 +216,6 @@ nav {
     rgba(10, 10, 10, 0.95),
     rgba(15, 35, 15, 0.9)
   ); /* Gradien gelap dengan sedikit aura hijau di bawah */
-  backdrop-filter: blur(15px);
   border-left: 2px solid rgb(58, 211, 3);
 
   /* Tambahan bayangan luar dan dalam (inset) biar ada efek kaca 3D */
@@ -529,7 +525,6 @@ nav {
   width: 80%;
   max-width: 1200px;
   background: rgba(0, 0, 0, 0.7);
-  backdrop-filter: blur(10px);
   border-radius: 20px;
   padding: 3rem;
   color: #ccc;
@@ -651,7 +646,6 @@ nav {
   max-width: 1200px;
   padding: 3rem 2rem;
   background: rgba(0, 0, 0, 0.7) !important;
-  backdrop-filter: blur(10px);
   border-radius: 20px;
   border: none !important;
   box-shadow: none !important;
@@ -1144,7 +1138,6 @@ nav {
 
 .btn-project {
   background: rgba(0, 0, 0, 0.7);
-  backdrop-filter: blur(5px);
   color: white;
   text-decoration: none;
   padding: 6px 15px;
@@ -1217,7 +1210,6 @@ nav {
   width: 80%;
   max-width: 1200px;
   background: rgba(0, 0, 0, 0.7);
-  backdrop-filter: blur(10px);
   border-radius: 20px;
   padding: 3rem;
   color: white;
@@ -1348,7 +1340,6 @@ nav {
 .footer {
   width: 100%;
   background: rgba(0, 0, 0, 0.8);
-  backdrop-filter: blur(10px);
   border-top: 1px solid rgba(58, 211, 3, 0.2);
   padding: 2.5rem 0;
   text-align: center;
@@ -1424,7 +1415,6 @@ nav {
   display: flex; /* Nyala di PC */
   justify-content: center;
   align-items: center;
-  backdrop-filter: blur(10px);
   box-shadow: 0 0 15px rgba(58, 211, 3, 0.2);
   transition: all 0.3s ease;
   cursor: pointer;
@@ -1450,7 +1440,6 @@ nav {
   background: transparent;
   border: none;
   box-shadow: none;
-  backdrop-filter: none;
 
   color: rgb(58, 211, 3);
   font-size: 1.4rem; /* Disamakan persis dengan ukuran font hamburg (1.4rem) */
@@ -1536,6 +1525,11 @@ nav {
 
 /* HANDPHONE / MOBILE (Maks 768px) */
 @media (max-width: 768px) {
+
+  nav {
+    height: 60px; /* Mengunci tinggi agar tidak terlalu tebal */
+  }
+
   nav .logo {
     position: absolute;
     top: 16px;
@@ -1656,22 +1650,6 @@ nav {
   a,
   button {
     cursor: auto !important;
-  }
-}
-
-@media (max-width: 768px) {
-  /* Matikan SEMUA efek blur kaca di HP untuk hemat RAM & GPU maksimal */
-  .about-content,
-  .timeline-content-wrapper,
-  .contact-content,
-  nav,
-  .dropdown,
-  .footer,
-  .btn-project,
-  .status-badge::after {
-    backdrop-filter: none !important;
-    -webkit-backdrop-filter: none !important; /* Tambahan khusus HP Apple/Safari */
-    background: black !important; /* Latar dibuat gelap pekat agar teks tetap jelas */
   }
 }
 
