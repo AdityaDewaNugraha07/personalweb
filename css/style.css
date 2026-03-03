@@ -1417,7 +1417,6 @@ nav {
   align-items: center;
   box-shadow: 0 0 15px rgba(58, 211, 3, 0.2);
   transition: all 0.3s ease;
-  cursor: pointer;
 }
 
 .audio-btn-pc:hover {
