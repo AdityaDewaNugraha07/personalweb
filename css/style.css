@@ -1443,7 +1443,7 @@ nav {
   right: 70px; /* Didekatkan sedikit ke ikon menu */
   top: 15px; /* Disamakan persis dengan tinggi ikon hamburg (15px) */
   z-index: 999999;
-  
+
   /* Hilangkan bentuk lingkaran agar murni jadi ikon saja */
   width: auto;
   height: auto;
@@ -1469,9 +1469,18 @@ nav {
 }
 
 @keyframes pulse-icon-mobile {
-  0% { text-shadow: 0 0 5px rgba(58, 211, 3, 0.4); transform: scale(1); }
-  50% { text-shadow: 0 0 20px rgb(58, 211, 3); transform: scale(1.15); }
-  100% { text-shadow: 0 0 5px rgba(58, 211, 3, 0.4); transform: scale(1); }
+  0% {
+    text-shadow: 0 0 5px rgba(58, 211, 3, 0.4);
+    transform: scale(1);
+  }
+  50% {
+    text-shadow: 0 0 20px rgb(58, 211, 3);
+    transform: scale(1.15);
+  }
+  100% {
+    text-shadow: 0 0 5px rgba(58, 211, 3, 0.4);
+    transform: scale(1);
+  }
 }
 
 /* --- 3. ANIMASI DENYUT NEON --- */
@@ -1481,9 +1490,15 @@ nav {
 }
 
 @keyframes pulse-audio {
-  0% { box-shadow: 0 0 15px rgba(58, 211, 3, 0.3); }
-  50% { box-shadow: 0 0 30px rgba(58, 211, 3, 0.8); }
-  100% { box-shadow: 0 0 15px rgba(58, 211, 3, 0.3); }
+  0% {
+    box-shadow: 0 0 15px rgba(58, 211, 3, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(58, 211, 3, 0.8);
+  }
+  100% {
+    box-shadow: 0 0 15px rgba(58, 211, 3, 0.3);
+  }
 }
 
 /* =========================================
@@ -1630,7 +1645,6 @@ nav {
   .audio-btn-mobile {
     display: flex !important; /* Nyalakan tombol Mobile saat masuk ke layar HP */
   }
-
 } /* <--- KURUNG KURAWAL PENUTUP @MEDIA PINDAH KE SINI */
 
 /* MATIKAN KURSOR NEON DI LAYAR SENTUH */
@@ -1645,7 +1659,8 @@ nav {
   }
 }
 
-/* Matikan SEMUA efek blur kaca di HP untuk hemat RAM & GPU maksimal */
+@media (max-width: 768px) {
+  /* Matikan SEMUA efek blur kaca di HP untuk hemat RAM & GPU maksimal */
   .about-content,
   .timeline-content-wrapper,
   .contact-content,
@@ -1656,8 +1671,9 @@ nav {
   .status-badge::after {
     backdrop-filter: none !important;
     -webkit-backdrop-filter: none !important; /* Tambahan khusus HP Apple/Safari */
-     background: black !important; /* Latar dibuat gelap pekat agar teks tetap jelas */
+    background: black !important; /* Latar dibuat gelap pekat agar teks tetap jelas */
   }
+}
 
 /* =========================================
    13. GPU HARDWARE ACCELERATION (ANTI-LAG)
