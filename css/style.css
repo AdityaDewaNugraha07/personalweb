@@ -19,7 +19,7 @@ body {
   width: 100%;
   max-width: 100%;
   min-height: 100vh;
-  background-image: url("../img/background.jpg");
+  background-color: #050505;
   background-size: cover;
   background-attachment: fixed;
   background-position: center;
@@ -27,6 +27,25 @@ body {
   overflow-y: auto;
   position: relative;
   cursor: none; /* Sembunyikan kursor bawaan */
+}
+
+/* 🔥 TAMBAHKAN KODE INI TEPAT DI BAWAH BODY 🔥 */
+/* Ini adalah trik background fixed yang super ringan untuk HP */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-image: url("../img/background.jpg");
+  background-size: cover;
+  background-position: center;
+  z-index: -999; /* Pastikan selalu berada paling belakang */
+  pointer-events: none; /* Biar gak mengganggu klik */
+  /* Hardware acceleration biar makin mulus */
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
 }
 
 a,
