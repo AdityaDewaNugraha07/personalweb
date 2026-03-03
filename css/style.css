@@ -1645,6 +1645,20 @@ nav {
   }
 }
 
+/* Matikan SEMUA efek blur kaca di HP untuk hemat RAM & GPU maksimal */
+  .about-content,
+  .timeline-content-wrapper,
+  .contact-content,
+  nav,
+  .dropdown,
+  .footer,
+  .btn-project,
+  .status-badge::after {
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important; /* Tambahan khusus HP Apple/Safari */
+    background: rgba(15, 15, 15, 0.98) !important; /* Latar dibuat gelap pekat agar teks tetap jelas */
+  }
+
 /* =========================================
    13. GPU HARDWARE ACCELERATION (ANTI-LAG)
    ========================================= */
