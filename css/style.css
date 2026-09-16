@@ -761,7 +761,11 @@ nav {
   color: #aaa;
   font-size: 0.95rem;
   font-style: italic;
+<<<<<<< HEAD
   padding-bottom: 20px;
+=======
+  margin-bottom: 10px;
+>>>>>>> 85dcd5beca7d78208248fb4bb0e54dc2bee37d8b
 }
 
 .timeline-card p {
@@ -770,6 +774,7 @@ nav {
   line-height: 1.5;
 }
 
+<<<<<<< HEAD
 .timeline-card ol {
   color: #ddd;
   font-size: 0.9rem;
@@ -790,6 +795,8 @@ nav {
   line-height: 1.5;
 }
 
+=======
+>>>>>>> 85dcd5beca7d78208248fb4bb0e54dc2bee37d8b
 .timeline-card strong {
   color: rgb(58, 211, 3);
 }
