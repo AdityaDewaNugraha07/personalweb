@@ -115,8 +115,4 @@ function toggleAudio() {
 
 // Hubungkan fungsi ke masing-masing tombol
 audioBtnPC.addEventListener("click", toggleAudio);
-<<<<<<< HEAD
 audioBtnMobile.addEventListener("click", toggleAudio);
-=======
-audioBtnMobile.addEventListener("click", toggleAudio);
->>>>>>> 85dcd5beca7d78208248fb4bb0e54dc2bee37d8b
